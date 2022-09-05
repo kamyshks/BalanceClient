@@ -1,4 +1,4 @@
-package dto;
+package kamyshks.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

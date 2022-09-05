@@ -1,5 +1,8 @@
+package kamyshks;
+
+import kamyshks.services.EndpointService;
+import kamyshks.services.ParseService;
 import org.apache.commons.cli.*;
-import services.*;
 
 public class Main {
 
@@ -15,12 +18,12 @@ public class Main {
         optFilePath.setRequired(false);
         options.addOption(optFilePath);
 
-        final Option optRCount = new Option("r", "rCount", true, "input rCount");
+        final Option optRCount = new Option("r", "rCount", true, "input rCount (integer)");
         optRCount.setRequired(false);
         optRCount.setType(Integer.class);
         options.addOption(optRCount);
 
-        final Option optWCount = new Option("w", "wCount", true, "input wCount");
+        final Option optWCount = new Option("w", "wCount", true, "input wCount (integer)");
         optWCount.setRequired(false);
         optWCount.setType(Integer.class);
         options.addOption(optWCount);
@@ -47,8 +50,8 @@ public class Main {
             } else {
                 endpointService.call(parseService.setParamsFromTerminal(rCount, wCount, idList));
             }
-        } catch (ParseException| NullPointerException e) {
-            System.out.println("Input error");
+        } catch (ParseException| NullPointerException | NumberFormatException e) {
+            System.out.println("Incorrect command parameters");
             formatter.printHelp("Balance client", options);
             System.exit(1);
         }

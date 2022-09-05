@@ -1,4 +1,4 @@
-package dto;
+package kamyshks.dto;
 
 import java.util.List;
 

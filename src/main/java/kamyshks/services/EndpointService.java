@@ -1,9 +1,9 @@
-package services;
+package kamyshks.services;
 
 import javax.ws.rs.client.ClientBuilder;
 
-import dto.BalanceDto;
-import dto.Params;
+import kamyshks.dto.BalanceDto;
+import kamyshks.dto.Params;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;

@@ -1,6 +1,6 @@
-package services;
+package kamyshks.services;
 
-import dto.Params;
+import kamyshks.dto.Params;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,7 +27,7 @@ public class ParseService {
             final List<Integer> idList = parseAll(scan.nextLine());
             Stream.of(idList).forEach(System.out::println);
             scan.close();
-            return new dto.Params(rCount, wCount, idList);
+            return new Params(rCount, wCount, idList);
         } catch (FileNotFoundException e) {
             System.out.println("File read error");
             e.printStackTrace();
